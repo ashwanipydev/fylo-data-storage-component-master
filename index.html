@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Fylo data storage component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: content-box;
+    }
+
+    body{
+      position: relative;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background: hsl(229, 57%, 11%);
+      background-image: url("images/bg-desktop.png");
+      background-repeat: no-repeat;
+      background-position: bottom -50px left;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    .main__container{
+      display: flex;
+      column-gap: 1rem;
+      align-items: flex-end;
+    }
+
+    .left__col{
+      width: 250px;
+      height: 100px;
+      background-color: hsl(228, 56%, 26%);
+      padding: 2rem 2rem;
+      border-radius: 10px 100px 10px 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      row-gap: 1rem;
+    }
+
+    .icon{
+      display: flex;
+      align-items: baseline;
+      column-gap: 1rem;
+    }
+
+    .icons{
+      padding: 1rem;
+      background-color: hsl(229, 57%, 11%);
+      border-radius: 10px;
+    }
+
+    .icons:nth-of-type(2){
+      padding: 1.1rem .8rem;
+    }
+
+    .icons:nth-of-type(3){
+      padding: 1.2rem 1rem;
+    }
+
+    .right__col{
+      display: flex;
+      flex-direction: column;
+      background-color: hsl(228, 56%, 26%);
+      height: 125px;
+      width: 400px;
+      position: relative;
+      border-radius: 10px;
+    }
+
+    .right__col-data-content{
+      display: flex;
+      flex-direction: column;
+      padding: 2rem 1rem;
+    }
+
+    .data__limet{
+      display: flex;
+      justify-content: space-between;
+      color: #fff;
+      font-weight: 400;
+      margin-top: 10px;
+    }
+
+    .progress{
+      background:  hsl(229, 57%, 11%);
+      width: 100%;
+      height: 15px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .progress__status{
+
+      height: 14px;
+      width: 80%;
+      background: linear-gradient(to right,hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+      border-radius: 10px;
+    }
+    .right__col-data{
+      position: absolute;
+      background-color: #fff;
+      width: 125px;
+      right: 15px;
+      top: -50px;
+      padding: 1rem 2rem;
+      border-radius: 10px;
+    }
+
+    .right__col-data::after{
+      content: "";
+      clear: both;
+      position: absolute;
+      top: 55%;
+      left: 68.5%;
+      border-width: 30px;
+      border-style: solid;
+      border-color: transparent white transparent transparent;
+    }
+
+
+
+    .cricl{
+      width: 13.5px;
+      height: 14px;
+      border-radius: 50%;
+      background-color: #fff;
+      position: absolute;
+      right: 22.5%;
+      top: 60px;
+    }
+
+    .title{
+      color:  hsl(229, 7%, 55%);
+      margin-bottom: 10px;
+    }
+
+    .data-gb{
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .right__col-data-status{
+      color: black;
+      font-weight: 700;
+      font-size: 2rem;
+
+    }
+
+    .status{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      font-weight: 700;
+      color: hsl(229, 7%, 55%)
+    }
+
+    @media (max-width: 375px){
+      .main__container{
+      display: flex;
+      flex-direction: column;
+      row-gap: 1rem;
+      align-items: center;
+    }
+    .right__col{
+      display: flex;
+      flex-direction: column;
+      background-color: hsl(228, 56%, 26%);
+      
+      width: 320px;
+      position: relative;
+      border-radius: 10px;
+    }
+
+    .right__col-data{
+      background-color: #fff;
+      max-width: 120px;
+      padding: 1.5rem 2rem;
+      border-radius: 10px;
+      bottom: 10;
+      top: 110px;
+      right: 25%;
+    }
+    .right__col-data::after{
+      display: none;
+    }
+
+
+    }
+
+    @media (max-width: 767px){
+      .main__container{
+      display: flex;
+      flex-direction: column;
+      row-gap: 1rem;
+      align-items: center;
+    }
+    .right__col{
+      display: flex;
+      flex-direction: column;
+      background-color: hsl(228, 56%, 26%);
+      
+      width: 320px;
+      position: relative;
+      border-radius: 10px;
+    }
+
+    .right__col-data{
+      background-color: #fff;
+      max-width: 120px;
+      padding: 1.5rem 2rem;
+      border-radius: 10px;
+      bottom: 10;
+      top: 110px;
+      right: 25%;
+    }
+    .right__col-data::after{
+      display: none;
+    }
+
+
+    }
+
+
+   
+    .attribution { font-size: 11px; text-align: center;  position: absolute; bottom: 0;}
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <main class="main__container">
+    <article class="left__col">
+      <div class="logo">
+        <img src="images/logo.svg" alt="img">
+      </div>
+      <div class="icon">
+        <span class="icons">
+          <img src="images/icon-document.svg" alt="img" class="doc">
+        </span>
+        <span class="icons">
+          <img src="images/icon-folder.svg" alt="img" class="folder">
+        </span>
+        <span class="icons">
+        <img src="images/icon-upload.svg" alt="img" class="upload">
+        </span>
+      </div>
+    </article>
+    <article class="right__col">
+      <div class="right__col-data">
+        <div class="status">
+          <span class="right__col-data-status">185</span>
+          <span class="gb">GB Left</span>
+        </div>
+      </div>
+      <div class="right__col-data-content">
+        <p class="title">You&apos;ve used <span class="data-gb">815 GB</span>of your storage</p>
+        <div class="progress">
+          <div class="progress__status">
+              <div class="cricl"></div>
+          </div>
+        </div>
+        <div class="data__limet">
+          <div>0GB</div>
+          <div>1000GB</div>
+        </div>
+        
+      </div>
+    </article>
+  </main>
+
+
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</body>
+</html>
