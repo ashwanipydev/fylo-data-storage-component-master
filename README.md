@@ -8,6 +8,6 @@
 
 ### Links
 
-- Solution URL: [solution](https://your-solution-url.com)
-- Live Site URL: [live site](https://your-live-site-url.com)
+- Solution URL: [solution](https://github.com/ashwanipydev/fylo-data-storage-component-master.git)
+- Live Site URL: [live site](https://ashwanipydev.github.io/fylo-data-storage-component-master/)
 
